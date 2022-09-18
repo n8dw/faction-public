@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    {# This is the base template for the site–other templates extend this one #}
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Nate's Website" />
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;600;900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/public/new-standard.css" />
+    {% seo "" %}
+  </head>
+  <body class="request" scrolling="no">
+  <main>
+    <div class="overhead content-vertical">
+      <span class="logo">
+        <img class="logo" src="/public/assets/logo.png"/>
+      </span>
+    </div>
+    {# Page or post content will appear here #}
+    
+    {{ requestToggleState }}
+
+    {% if (requestToggleState == true) %}
+      <span class="content-vertical festifyRequestFrame">
+        <iframe src="https://festify.us/party/{% FESTIFY_UNIQUE_ID %}" class="festifyRequestFrame">
+        Your browser is not supported. Try Google Chrome.
+        </iframe>
+      </span>
+      <span class="content-horizontal festifyTVModeGuestFrame">
+        &nbsp;
+      </span>
+      <span class="content-horizontal rate-experience-link">
+        <a class="md-inline-url" href="https://faction.party/feedback" target="_NEW">Rate your experience.</a>
+        &emsp;&emsp;
+        <a class="md-inline-url" href="https://faction.party/about" target="_NEW">Use FACTION at your party.</a>
+      </span>
+    {% endif %}
+
+    {% if (requestToggleState == false) %}
+      <span class="content-vertical">
+        <h1>Requests Disabled</h1>
+        <p>Check back later.</p>
+      </span>
+      <span class="content-horizontal festifyTVModeGuestFrame">
+        &nbsp;
+      </span>
+      <span class="content-horizontal rate-experience-link">
+        <a class="md-inline-url" href="https://faction.party/feedback" target="_NEW">Rate your experience.</a>
+        &emsp;&emsp;
+        <a class="md-inline-url" href="https://faction.party/about" target="_NEW">FACTION 19.0 (Major General)</a>
+      </span>
+    {% endif %}
+    
+  </main>
+
+  </body>
+</html>

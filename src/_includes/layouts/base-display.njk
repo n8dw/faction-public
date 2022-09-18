@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    {# This is the base template for the site–other templates extend this one #}
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Nate's Website" />
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;600;900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/public/new-standard.css" />
+    {% seo "" %}
+  </head>
+  <body class="display" scrolling="no">
+  <main>
+    <div class="overhead">
+      <span class="display-head-left">
+        <img class="logo" src="/public/assets/logo.png"/>
+      </span>
+      <span class="display-head-right">
+        <p class="headerMessageText">
+          Join the FACTION at&nbsp;
+          <strong>{% JOIN_LINK %}</strong>
+        </p>
+      </span>
+    </div>
+    {# Page or post content will appear here #}
+  
+    {{ content | safe }}
+  </main>
+
+  </body>
+</html>
