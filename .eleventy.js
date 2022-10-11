@@ -85,10 +85,8 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addShortcode("JOIN_LINK", function(){
-    let quickAccessBase = "faction.party/"
-    let glitchProjectName = process.env.PROJECT_DOMAIN;
-    let joinLink = quickAccessBase + glitchProjectName;
-    return joinLink;
+    let projectName = process.env.PROJECT_DOMAIN;
+    return projectName;
   });
 
   var state = process.env.REQUESTS_TOGGLE;
