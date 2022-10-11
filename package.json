@@ -4,18 +4,17 @@
   "description": "A simple blog, set up with Eleventy.",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy"
-  },
-  "devDependencies": {
-    "netlify-cli": "^6.14.7"
+    "build": "NODE_ENV=production eleventy --serve",
+    "dev": "npx @11ty/eleventy NODE_ENV=production eleventy",
+    "withlogin": "netlify dev eleventy --serve"
   },
   "dependencies": {
-    "@11ty/eleventy": "1.0.0",
-    "luxon": "2.3.0",
-    "cookie": "^0.4.1",
-    "dotenv": "^10.0.0",
-    "node-fetch": "^2.3.0",
-    "simple-oauth2": "^4.2.0",
+    "@11ty/eleventy": "^1.0.2",
+    "luxon": "^3.0.3",
+    "cookie": "^0.5.0",
+    "dotenv": "^16.0.1",
+    "node-fetch": "^3.2.10",
+    "simple-oauth2": "^4.3.0",
     "eleventy-plugin-seo": "^0.5.2",
     "markdown-it-attrs": "^4.1.4"
   },
